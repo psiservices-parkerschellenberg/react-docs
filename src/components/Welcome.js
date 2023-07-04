@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Items from './Items';
-import MyButton from './MyButton';
+import ToggleBtn from './ToggleBtn';
 
 function Welcome({ user }) {
     const [showItems, setShowItems] = useState(false);
@@ -13,7 +13,7 @@ function Welcome({ user }) {
         <div className="Welcome">
             <h1>Welcome {user.name}!</h1>
             <p>You are logged in.</p>
-            <MyButton toggleItems={toggleItems} />
+            <ToggleBtn toggleItems={toggleItems} />
             {showItems && <Items />}
         </div>
     );

@@ -1,6 +1,6 @@
-import './MyButton.css';
+import './ToggleBtn.css';
 
-function MyButton({ toggleItems }) {
+function ToggleBtn({ toggleItems }) {
     return (
         <button onClick={toggleItems}>
             show items
@@ -8,4 +8,4 @@ function MyButton({ toggleItems }) {
     );
 }
 
-export default MyButton;
+export default ToggleBtn;

@@ -14,5 +14,7 @@
   color: #61dafb;
 }
 
-
+ul {
+    list-style-type: none;
+}
 

@@ -8,7 +8,6 @@ const user = {
     isLoggedIn: true
 };
 
-
 function App() {
     return (
         <div className="App">

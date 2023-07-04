@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Items from './Items';
 import ToggleBtn from './ToggleBtn';
 
-function Welcome({ user, items }) {
+function Welcome({ user }) {
     const [showItems, setShowItems] = useState(false);
 
     function toggleItems() {
@@ -14,7 +14,7 @@ function Welcome({ user, items }) {
             <h1>Welcome {user.name}!</h1>
             <p>You are logged in.</p>
             <ToggleBtn toggleItems={toggleItems} />
-            {showItems && <Items items={items} />}
+            {showItems && <Items items={user.items} />}
         </div>
     );
 }

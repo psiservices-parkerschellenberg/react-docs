@@ -7,19 +7,18 @@ function App() {
     const user = {
         name: "Parker",
         age: 27,
-        isLoggedIn: true
+        isLoggedIn: true,
+        items: [
+            { title: 'Cabbage', id: 1 },
+            { title: 'Garlic', id: 2 },
+            { title: 'Apple', id: 3 },
+        ]
     };
-
-    const items = [
-        { title: 'Cabbage', id: 1 },
-        { title: 'Garlic', id: 2 },
-        { title: 'Apple', id: 3 },
-    ];
 
     return (
         <div className="App">
             {user.isLoggedIn
-                ? (<Welcome user={user} items={items} /> )
+                ? ( <Welcome user={user} /> )
                 : ( <LoginForm /> )
             }
         </div>

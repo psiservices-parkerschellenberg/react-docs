@@ -1,8 +1,10 @@
 import './MyButton.css';
 
-function MyButton() {
+function MyButton({ toggleItems }) {
     return (
-        <button>I'm a button</button>
+        <button onClick={toggleItems}>
+            show items
+        </button>
     );
 }
 

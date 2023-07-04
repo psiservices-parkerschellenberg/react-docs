@@ -1,19 +1,27 @@
 import './App.css';
-import MyButton from './components/MyButton';
+import Home from './components/Home';
+import LoginForm from './components/LoginForm';
 
 const user = {
     name: "Parker",
     age: 27,
-    loggedIn: true
+    isLoggedIn: true
 };
 
+
 function App() {
-  return (
-    <div className="App">
-          <h1>Welcome {user.name}!</h1>
-      <MyButton/>
-    </div>
-  );
+    let content;
+    if (user.isLoggedIn) {
+        content = <Home user={user} />;
+    } else {
+        content = <LoginForm />;
+    }
+
+    return (
+        <div className="App">
+            { content }
+        </div>
+    );
 }
 
 export default App;

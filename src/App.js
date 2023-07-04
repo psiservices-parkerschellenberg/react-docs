@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './components/Home';
+import Welcome from './components/Welcome';
 import LoginForm from './components/LoginForm';
 
 const user = {
@@ -10,16 +10,12 @@ const user = {
 
 
 function App() {
-    let content;
-    if (user.isLoggedIn) {
-        content = <Home user={user} />;
-    } else {
-        content = <LoginForm />;
-    }
-
     return (
         <div className="App">
-            { content }
+            {user.isLoggedIn
+                ? ( <Welcome user={user} /> )
+                : ( <LoginForm /> )
+            }
         </div>
     );
 }

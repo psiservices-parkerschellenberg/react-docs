@@ -1,4 +1,4 @@
-function Home({ user }) {
+function Welcome({ user }) {
     return (
         <div>
             <h1>Welcome {user.name}!</h1>
@@ -7,4 +7,4 @@ function Home({ user }) {
     );
 }
 
-export default Home;
+export default Welcome;

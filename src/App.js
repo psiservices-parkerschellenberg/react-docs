@@ -12,10 +12,7 @@ const user = {
 function App() {
     return (
         <div className="App">
-            {user.isLoggedIn
-                ? ( <Welcome user={user} /> )
-                : ( <LoginForm /> )
-            }
+            {user.isLoggedIn && <Welcome user={user} />}
         </div>
     );
 }

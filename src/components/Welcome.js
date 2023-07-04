@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Items from './Items';
 import ToggleBtn from './ToggleBtn';
 
 function Welcome({ user }) {
     const [showItems, setShowItems] = useState(false);
+    const [count, setCount] = useState(0);
 
     function toggleItems() {
         setShowItems(!showItems);
+        setCount(count + 1);
     }
 
     return (

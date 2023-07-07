@@ -18,17 +18,14 @@ function App() {
         ]
     };
 
-    const [bgImage, setBgImage] = useState('');
+    const [isToggled, setToggle] = useState(false);
 
-    const handleClick = () => {
-        const randomNumber = Math.floor(Math.random() * 300) + 1;
-        const imageUrl = `https://picsum.photos/id/${randomNumber}/200/300`;
-        setBgImage(imageUrl);
+    const handleToggle = () => {
+        setToggle(!isToggled);
     };
 
-
     return (
-        <div className="App" style={{ backgroundImage: `url(${bgImage})` }}>
+        <div className={`App ${isToggled ? 'BGimg' : ''}`}>
             {user.isLoggedIn
                 ? ( <Welcome user={user} /> )
                 : ( <LoginForm /> )
@@ -36,7 +33,7 @@ function App() {
             <NewBtn />
             <NewBtn />
             <NewBtn />
-            <ImageBtn handleClick={handleClick} />
+            <ImageBtn handleToggle={handleToggle}/>
         </div>
     );
 }

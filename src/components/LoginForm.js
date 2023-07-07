@@ -2,7 +2,7 @@ import './LoginForm.css';
 
 function LoginForm() {
     return (
-        <div>
+        <div className="LoginForm">
             <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <input id="username" type="text" className="form-input" />

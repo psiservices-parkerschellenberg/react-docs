@@ -1,6 +1,7 @@
 import './App.css';
 import Welcome from './components/Welcome';
 import LoginForm from './components/LoginForm';
+import NewBtn from './components/NewBtn';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
                 ? ( <Welcome user={user} /> )
                 : ( <LoginForm /> )
             }
+            <NewBtn />
+            <NewBtn />
+            <NewBtn />
         </div>
     );
 }

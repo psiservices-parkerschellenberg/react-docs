@@ -18,7 +18,13 @@ ul {
     list-style-type: none;
 }
 
-.Welcome {
+.Welcome,
+.LoginForm {
     margin-top: 20vh;
+    margin-bottom: 75px;
+}
+
+.click-me {
+    margin-top: 16px;
 }
 

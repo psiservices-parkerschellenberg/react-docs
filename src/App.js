@@ -2,6 +2,8 @@ import './App.css';
 import Welcome from './components/Welcome';
 import LoginForm from './components/LoginForm';
 import NewBtn from './components/NewBtn';
+import ImageBtn from './components/ImageBtn';
+import { useState } from 'react';
 
 
 function App() {
@@ -16,8 +18,14 @@ function App() {
         ]
     };
 
+    const [isToggled, setToggle] = useState(false);
+
+    const handleToggle = () => {
+        setToggle(!isToggled);
+    };
+
     return (
-        <div className="App">
+        <div className={`App ${isToggled ? 'BGimg' : ''}`}>
             {user.isLoggedIn
                 ? ( <Welcome user={user} /> )
                 : ( <LoginForm /> )
@@ -25,6 +33,7 @@ function App() {
             <NewBtn />
             <NewBtn />
             <NewBtn />
+            <ImageBtn handleToggle={handleToggle}/>
         </div>
     );
 }

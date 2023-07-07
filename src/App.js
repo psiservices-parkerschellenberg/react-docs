@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import Welcome from './components/Welcome';
 import LoginForm from './components/LoginForm';
@@ -16,15 +17,20 @@ function App() {
         ]
     };
 
+    const [count, setCount] = useState(0);
+    function handleClick() {
+        setCount(count + 1);
+    }
+
     return (
         <div className="App">
             {user.isLoggedIn
                 ? ( <Welcome user={user} /> )
                 : ( <LoginForm /> )
             }
-            <NewBtn />
-            <NewBtn />
-            <NewBtn />
+            <NewBtn count={count} handleClick={handleClick} />
+            <NewBtn count={count} handleClick={handleClick} />
+            <NewBtn count={count} handleClick={handleClick} />
         </div>
     );
 }

@@ -1,6 +1,8 @@
-export default function ImageBtn( { handleToggle }) {
+export default function ImageBtn( { handleClick }) {
 
     return (
-        <button className="ImgBtn" onClick={handleToggle}>change bg img</button>
+        <button className="ImgBtn" onClick={handleClick}>
+            change bg img
+        </button>
     );
 }

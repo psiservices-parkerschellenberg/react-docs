@@ -2,6 +2,7 @@ import './App.css';
 import Welcome from './components/Welcome';
 import LoginForm from './components/LoginForm';
 import NewBtn from './components/NewBtn';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
             { title: 'Apple', id: 3 },
         ]
     };
+
+    useEffect(() => {
+        console.log('effect used');
+    }, []);
 
     return (
         <div className="App">

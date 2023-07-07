@@ -2,7 +2,7 @@ import './App.css';
 import Welcome from './components/Welcome';
 import LoginForm from './components/LoginForm';
 import NewBtn from './components/NewBtn';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -17,15 +17,9 @@ function App() {
         ]
     };
 
-    const [count, setCount] = useState(0);
-
-    const increment = () => {
-        setCount(count + 1);
-    };
-
     useEffect(() => {
         console.log('effect used');
-    }, [count]);
+    }, []);
 
     return (
         <div className="App">
@@ -36,8 +30,6 @@ function App() {
             <NewBtn />
             <NewBtn />
             <NewBtn />
-            <p>Count: {count}</p>
-            <button onClick={increment}>Increment</button>
         </div>
     );
 }

@@ -12,7 +12,7 @@ function App() {
     const user = {
         name: "Parker",
         age: 27,
-        isLoggedIn: false,
+        isLoggedIn: true,
         items: [
             { title: 'Cabbage', id: 1 },
             { title: 'Garlic', id: 2 },

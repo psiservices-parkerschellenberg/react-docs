@@ -36,3 +36,28 @@ ul {
     background-image: url(https://i.imgur.com/MK3eW3Am.jpg);
 }
 
+button {
+    padding: 0.5em 1em;
+    border-radius: 16px;
+    font-weight: bold;
+    color: white;
+    background: darkgrey;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-left: 8px;
+}
+

@@ -1,4 +1,3 @@
-import './ToggleBtn.css';
 
 function ToggleBtn({ toggleItems }) {
     return (

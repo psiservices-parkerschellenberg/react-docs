@@ -1,0 +1,30 @@
+
+.form {
+    padding: 20px;
+    background: darkgrey;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formLabel {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.formInput {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}

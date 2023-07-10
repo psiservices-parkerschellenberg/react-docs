@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import Items from './Items';
-import ToggleBtn from './ToggleBtn';
 
-function Welcome({ user }) {
+export default function Welcome({ user }) {
     const [showItems, setShowItems] = useState(false);
-    const [count, setCount] = useState(0);
 
     function toggleItems() {
         setShowItems(!showItems);
-        setCount(count + 1);
     }
 
     return (
@@ -21,4 +17,25 @@ function Welcome({ user }) {
     );
 }
 
-export default Welcome;
+function ToggleBtn({ toggleItems }) {
+    return (
+        <button onClick={toggleItems}>
+            show items
+        </button>
+    );
+}
+
+function Items({ items }) {
+    const listItems = items.map(item =>
+        <li key={item.id}>
+            {item.title}
+        </li>
+    );
+
+    return (
+        <div>
+            <h3>Your items:</h3>
+            <ul>{listItems}</ul>
+        </div>
+    );
+}

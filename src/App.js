@@ -24,12 +24,6 @@ function App() {
         setToggle(!isToggled);
     };
 
-    const texts = [
-        'These are',
-        'three',
-        '<p> elements'
-    ];
-
     return (
         <div className={`App ${isToggled ? 'BGimg' : ''}`}>
             {user.isLoggedIn
@@ -39,14 +33,7 @@ function App() {
             <NewBtn />
             <NewBtn />
             <NewBtn />
-            <ImageBtn handleToggle={handleToggle} />
-            <div>
-                {texts.map((text, i) => (
-                    <p key={i}>
-                        {text}
-                    </p>
-                ))}
-            </div>
+            <ImageBtn handleToggle={handleToggle}/>
         </div>
     );
 }

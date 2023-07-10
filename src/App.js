@@ -4,6 +4,7 @@ import Welcome from './components/Welcome';
 import NewBtn from './components/NewBtn';
 import ImageBtn from './components/ImageBtn';
 import Form1 from './components/Form1';
+import Form2 from './components/Form2';
 import { useState } from 'react';
 
 
@@ -36,7 +37,10 @@ function App() {
             <NewBtn />
             <NewBtn />
             <ImageBtn handleToggle={handleToggle} />
-            <Form1 />
+            <div style={{ display: 'flex', gap: 25 }}>
+                <Form1 />
+                <Form2 />
+            </div>
         </div>
     );
 }

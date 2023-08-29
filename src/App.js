@@ -1,64 +1,48 @@
 import './App.css';
+import Welcome from './components/Welcome';
+//import LoginForm from './components/LoginForm';
+import NewBtn from './components/NewBtn';
+import ImageBtn from './components/ImageBtn';
+import Form1 from './components/Form1';
+import Form2 from './components/Form2';
 import { useState } from 'react';
 
-export default function App() {
+
+function App() {
+    const user = {
+        name: "Parker",
+        age: 27,
+        isLoggedIn: true,
+        items: [
+            { title: 'Cabbage', id: 1 },
+            { title: 'Garlic', id: 2 },
+            { title: 'Apple', id: 3 },
+        ]
+    };
+
+    const [isToggled, setToggle] = useState(false);
+
+    const handleToggle = () => {
+        setToggle(!isToggled);
+    };
 
     return (
-        <div className="App">
-            <CalculatorWidget />
+        <div className={`App ${isToggled ? 'BGimg' : ''}`}>
+            {user.isLoggedIn
+                ? ( <Welcome user={user} /> )
+                //: (<LoginForm />)
+                : null
+            }
+            <NewBtn />
+            <NewBtn />
+            <NewBtn />
+            <ImageBtn handleToggle={handleToggle} />
+            <div style={{ display: 'flex', gap: 25 }}>
+                <Form1 />
+                <Form2 />
+            </div>
         </div>
     );
 }
 
-const CalculatorWidget = () => {
-    const [input, setInput] = useState("0");
-  
-    const handleButtonClick = (value) => {
-      if (value === "=") {
-        try {
-          setInput(eval(input).toString());
-        } catch (error) {
-          setInput("Error");
-        }
-      } else if (value === "C") {
-        setInput("0");
-      } else {
-        setInput((prevInput) => (prevInput === "0" ? value : prevInput + value));
-      }
-    };
-  
-    return (
-      <div
-        className="calculator-widget"
-        role="dialog"
-        aria-label="Calculator Widget"
-      >
-        <input
-          type="text"
-          value={input}
-          aria-live="assertive"
-          aria-atomic="true"
-          readOnly
-        />
-        <div className="calculator-buttons">
-          <button onClick={() => handleButtonClick("7")}>7</button>
-          <button onClick={() => handleButtonClick("8")}>8</button>
-          <button onClick={() => handleButtonClick("9")}>9</button>
-          <button onClick={() => handleButtonClick("/")}>/</button>
-          <button onClick={() => handleButtonClick("4")}>4</button>
-          <button onClick={() => handleButtonClick("5")}>5</button>
-          <button onClick={() => handleButtonClick("6")}>6</button>
-          <button onClick={() => handleButtonClick("*")}>*</button>
-          <button onClick={() => handleButtonClick("1")}>1</button>
-          <button onClick={() => handleButtonClick("2")}>2</button>
-          <button onClick={() => handleButtonClick("3")}>3</button>
-          <button onClick={() => handleButtonClick("-")}>-</button>
-          <button onClick={() => handleButtonClick("0")}>0</button>
-          <button onClick={() => handleButtonClick(".")}>.</button>
-          <button onClick={() => handleButtonClick("=")}>=</button>
-          <button onClick={() => handleButtonClick("+")}>+</button>
-          <button onClick={() => handleButtonClick("C")}>C</button>
-        </div>
-      </div>
-    );
-  };
+export default App;
